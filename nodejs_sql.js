@@ -38,8 +38,12 @@ app.get('',(req, res) => {
          }) 
     })
 })
- 
 
+
+ 
+app.get('/index', (req, res) => {
+    res.render('index')
+})
 
 app.listen(port, () => 
     console.log("listen on port : ?", port)
