@@ -1,0 +1,69 @@
+<%- include('partials/header'); -%>
+    <div class="Row play">
+        <div class="Regular">
+            
+        </div>
+            <h1 style="text-align: center;">Lottery Check</h1> 
+
+            <div class="Regular">
+                <form action="" method="post"  enctype="multipart/form-data">
+                    <select name="round_form" id="round_form" class="form-control">
+                        <% round.forEach ( function ( lot, index ) { %>
+                        <option value=<%= lot.id %>><%= lot.lottery_round %></option>
+                        <% i=lot.id %> 
+                        <% } ); %>
+                    </select>
+                    <label for="lname">Lottery:</label>
+                    <input type="text" id="lname" name="lname" ><br><br>
+                    <button type="submit" class="btn btn-primary mb-2">Lottery</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="Regular">
+
+        </div>
+        
+    </div>
+    <div class="Row play">
+        <div class="Regular">
+            
+        </div>
+        <div class="Regular center1 shadow-lg">
+            <h1 style="text-align: center;">lottery</h1> 
+            <tbody>
+                <% if ( round.length > 0 ) { %>
+                    <table style="width: 100%;">
+                        <tr>
+                            <th>Round</th>
+                            <th>The first prize</th>
+                            <th>Nearby first prize</th>
+                            <th>The first three digits prize </th>
+                        </tr>
+                    <% round.forEach ( function ( record, index ) { %>
+                        
+                            <tr>
+                                <th><%= record.Lottery_round; %></th>
+                                <th><%= record.The_first_prize; %></th>
+                                <th><%= record.Nearby_first_prize; %></th>
+                                <th><%= record.The_first_three_digits_prize; %></th>
+                            </tr>                       
+                    <% } ); %>
+                </table>
+                <% } else { %>
+                    <tr>
+                        <td colspan="100%">- None -</td>
+                    </tr>
+                <% } %>            
+            </tbody>
+        </div>
+        
+        <div class="Regular">
+
+        </div>
+        
+    </div>
+
+
+</body>
+</html>
